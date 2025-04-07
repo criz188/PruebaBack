@@ -2,12 +2,12 @@ export class City {
     constructor(
       public readonly id: number,
       public readonly x: number,
-      public readonly y: number
+      public readonly y: number,
     ) {}
   
-    distanceTo(other: City): number {
-      const dx = this.x - other.x;
-      const dy = this.y - other.y;
+    static distance(a: City, b: City): number {
+      const dx = a.x - b.x;
+      const dy = a.y - b.y;
       return Math.sqrt(dx * dx + dy * dy);
     }
   }
