@@ -1,5 +1,5 @@
-import { TspSolver } from '../../src/tsp/domain/tsp-solver/tsp-solver';
-import { City } from '../../src/tsp/domain/tsp-solver/city';
+import { TspSolver } from '../domain/tsp-solver/TspSolver';
+import { City } from '../domain/tsp-solver/City';
 
 describe('TspSolver', () => {
   it('calculates a route and total distance', () => {
@@ -8,8 +8,10 @@ describe('TspSolver', () => {
       new City(1, 0, 1),
       new City(2, 1, 0),
     ];
+
     const solver = new TspSolver(cities);
     const result = solver.solve();
+
     expect(result.route.length).toBe(3);
     expect(result.totalDistance).toBeGreaterThan(0);
   });
